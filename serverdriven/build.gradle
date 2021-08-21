@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -18,8 +19,13 @@ android {
 }
 
 dependencies {
-    implementation "br.com.zup.beagle:android:1.6.1"
+
+    api project(path: ':designsystem')
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+
     kapt "br.com.zup.beagle:android-processor:1.6.1"
+    api "br.com.zup.beagle:android:1.6.1"
+    implementation "br.com.zup.beagle:beagle-scaffold:1.6.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
